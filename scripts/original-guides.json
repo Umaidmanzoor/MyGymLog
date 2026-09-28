@@ -1,0 +1,110 @@
+{
+  "hollow-body-hold": {
+    "sourceName": "Hollow Body Hold",
+    "kind": "original-guide",
+    "images": ["demos/hollow-body-hold/0.svg", "demos/hollow-body-hold/1.svg"],
+    "video": "demos/hollow-body-hold/loop.mp4",
+    "muscles": ["abdominals"],
+    "steps": [
+      "Lie on your back and press your lower back into the floor. Lift your shoulders and legs slightly, keeping your ribs down.",
+      "Hold the shape while breathing steadily. Bend your knees or raise your legs if your lower back lifts. Log the hold in seconds."
+    ],
+    "sourceURL": ""
+  },
+  "bayesian-cable-curl": {
+    "sourceName": "Bayesian Cable Curl",
+    "kind": "original-guide",
+    "images": [
+      "demos/bayesian-cable-curl/0.svg",
+      "demos/bayesian-cable-curl/1.svg"
+    ],
+    "video": "demos/bayesian-cable-curl/loop.mp4",
+    "muscles": ["biceps"],
+    "steps": [
+      "Face away from a low cable with your working arm slightly behind your torso. Stand tall and keep your upper arm steady.",
+      "Curl the handle toward your shoulder without swinging or letting the elbow drift. Lower slowly and repeat on the other side."
+    ],
+    "sourceURL": ""
+  },
+  "single-arm-cable-press": {
+    "sourceName": "Single-Arm Cable Press",
+    "kind": "original-guide",
+    "images": [
+      "demos/single-arm-cable-press/0.svg",
+      "demos/single-arm-cable-press/1.svg"
+    ],
+    "video": "demos/single-arm-cable-press/loop.mp4",
+    "muscles": ["chest"],
+    "steps": [
+      "Stand facing away from a chest-height pulley in a staggered stance. Hold the handle beside your chest and brace your torso.",
+      "Press one hand forward without rotating your body. Return slowly until the hand is beside your chest; switch sides."
+    ],
+    "sourceURL": ""
+  },
+  "lean-away-lateral-raise": {
+    "sourceName": "Lean-Away Lateral Raise",
+    "kind": "original-guide",
+    "images": [
+      "demos/lean-away-lateral-raise/0.svg",
+      "demos/lean-away-lateral-raise/1.svg"
+    ],
+    "video": "demos/lean-away-lateral-raise/loop.mp4",
+    "muscles": ["shoulders"],
+    "steps": [
+      "Hold a stable support with one hand. Keep your feet close to it and lean away slightly, letting the dumbbell hang at your free side.",
+      "Raise your free arm out to shoulder height with a soft elbow. Lower slowly; keep your neck relaxed and avoid shrugging."
+    ],
+    "sourceURL": ""
+  },
+  "y-raise": {
+    "sourceName": "Y Raise",
+    "kind": "original-guide",
+    "images": ["demos/y-raise/0.svg", "demos/y-raise/1.svg"],
+    "video": "demos/y-raise/loop.mp4",
+    "muscles": ["lower trapezius", "shoulders"],
+    "steps": [
+      "Stand tall with light weights and palms facing inward. Brace your trunk and start with your arms by your sides.",
+      "Raise both arms diagonally into a Y without shrugging or arching your back. Pause, then lower with control."
+    ],
+    "sourceURL": ""
+  },
+  "pike-push-up": {
+    "sourceName": "Pike Push-Up",
+    "kind": "original-guide",
+    "images": ["demos/pike-push-up/0.svg", "demos/pike-push-up/1.svg"],
+    "video": "demos/pike-push-up/loop.mp4",
+    "muscles": ["shoulders", "triceps"],
+    "steps": [
+      "Place your hands on the floor and lift your hips into an inverted V. Keep the weight controlled over your hands.",
+      "Bend the elbows to lower your head toward the floor between and slightly ahead of your hands. Press back up, keeping your hips high."
+    ],
+    "sourceURL": ""
+  },
+  "cross-body-cable-extension": {
+    "sourceName": "Cross-Body Cable Extension",
+    "kind": "original-guide",
+    "images": [
+      "demos/cross-body-cable-extension/0.svg",
+      "demos/cross-body-cable-extension/1.svg"
+    ],
+    "video": "demos/cross-body-cable-extension/loop.mp4",
+    "muscles": ["triceps"],
+    "steps": [
+      "Stand beside a high pulley and hold its handle with the opposite hand. Bring the working elbow in front of your torso and keep it still.",
+      "Extend the elbow diagonally down and across your body. Control the return without moving your shoulder; repeat on the other side."
+    ],
+    "sourceURL": ""
+  },
+  "landmine-press": {
+    "sourceName": "Landmine Press",
+    "kind": "original-guide",
+    "images": ["demos/landmine-press/0.svg", "demos/landmine-press/1.svg"],
+    "video": "demos/landmine-press/loop.mp4",
+    "muscles": ["shoulders", "chest"],
+    "steps": [
+      "Secure one end of the bar in a landmine attachment. Stand in a staggered stance and hold the free end near one shoulder.",
+      "Brace your torso and press the bar upward and forward. Lower to your shoulder with control, without leaning back."
+    ],
+    "sourceURL": ""
+  }
+}
