@@ -128,6 +128,7 @@ test("guides, YouTube links, grouped plans and photo scrubbing", async ({
     path: `test-results/photos-${test.info().project.name}.png`,
     fullPage: true,
   });
+  await expect(page.locator(".photo-caption")).toContainText("78 kg");
   await page.reload();
   await expect(
     page.getByRole("img", { name: "Progress photo from 2025-02-01" }),

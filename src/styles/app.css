@@ -1518,3 +1518,7 @@ dialog::backdrop {
 .offline-status.ready {
   color: #458368;
 }
+
+.outline {
+  outline: none;
+}

@@ -51,6 +51,11 @@ export default function BodyJourney({ unit }: { unit: string }) {
   const input = useRef<HTMLInputElement>(null);
   const slides = useRef<HTMLDivElement>(null);
   const pendingSelection = useRef("");
+  const userScrolling = useRef(false);
+  function choose(id: string) {
+    userScrolling.current = false;
+    setSelected(id);
+  }
   const index = Math.max(
     0,
     weights.findIndex((w) => w.id === selected),
@@ -66,7 +71,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
       pendingSelection.current &&
       weights.some((w) => w.id === pendingSelection.current)
     ) {
-      setSelected(pendingSelection.current);
+      choose(pendingSelection.current);
       pendingSelection.current = "";
       return;
     }
@@ -75,10 +80,10 @@ export default function BodyJourney({ unit }: { unit: string }) {
       !pendingSelection.current &&
       !weights.some((w) => w.id === selected)
     )
-      setSelected(weights.at(-1)!.id);
+      choose(weights.at(-1)!.id);
   }, [weights, selected]);
   useEffect(() => {
-    if (slides.current)
+    if (slides.current && !userScrolling.current)
       slides.current.scrollTo({
         left: index * slides.current.clientWidth,
         behavior: "instant",
@@ -111,7 +116,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
         else if (removePhoto) await db.bodyPhotos.delete(date);
       });
       if (weights.some((w) => w.id === date)) {
-        setSelected(date);
+        choose(date);
         pendingSelection.current = "";
       }
       setWeight("");
@@ -144,11 +149,18 @@ export default function BodyJourney({ unit }: { unit: string }) {
           <div
             className="progress-photos"
             ref={slides}
+            onPointerDown={() => {
+              userScrolling.current = true;
+            }}
+            onTouchStart={() => {
+              userScrolling.current = true;
+            }}
             onScroll={(e) => {
               const i = Math.round(
                 e.currentTarget.scrollLeft / e.currentTarget.clientWidth,
               );
-              if (weights[i]) setSelected(weights[i].id);
+              if (userScrolling.current && weights[i])
+                setSelected(weights[i].id);
             }}
           >
             {weights.map((w, i) => (
@@ -161,7 +173,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
             <button
               aria-label="Previous progress photo"
               disabled={index === 0}
-              onClick={() => setSelected(weights[index - 1].id)}
+              onClick={() => choose(weights[index - 1].id)}
             >
               <ChevronLeft />
             </button>
@@ -174,7 +186,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
             <button
               aria-label="Next progress photo"
               disabled={index === weights.length - 1}
-              onClick={() => setSelected(weights[index + 1].id)}
+              onClick={() => choose(weights[index + 1].id)}
             >
               <ChevronRight />
             </button>
@@ -187,7 +199,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
           unit={unit}
           selectedIndex={index}
           onSelect={(i) => {
-            if (weights[i]) setSelected(weights[i].id);
+            if (weights[i]) choose(weights[i].id);
           }}
         />
       </Suspense>
@@ -202,7 +214,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
               max={Math.max(0, weights.length - 1)}
               step="1"
               value={index}
-              onChange={(e) => setSelected(weights[Number(e.target.value)].id)}
+              onChange={(e) => choose(weights[Number(e.target.value)].id)}
             />
           </label>
           <p className="caption">
@@ -324,7 +336,7 @@ export default function BodyJourney({ unit }: { unit: string }) {
         <summary>All check-ins · {weights.length}</summary>
         {[...weights].reverse().map((w) => (
           <div className="setting-row" key={w.id}>
-            <button onClick={() => setSelected(w.id)}>
+            <button onClick={() => choose(w.id)}>
               {w.date} · {round(toDisplay(w.kg, unit))} {unit}
             </button>
             <button
