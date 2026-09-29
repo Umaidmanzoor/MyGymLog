@@ -39,7 +39,7 @@ test("optional PIN can be disabled and fresh visitors have independent data", as
   await expect(
     other.getByRole("heading", { name: "Exercises", exact: true }),
   ).toBeVisible();
-  await expect(other).toHaveTitle("Coral Gym");
+  await expect(other).toHaveTitle("MyGymLog");
   await other.getByRole("link", { name: "Profile", exact: true }).click();
   await expect(other.getByText("80 kg", { exact: true })).toHaveCount(0);
   await expect(

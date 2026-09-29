@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: "prompt",
       includeAssets: ["icons/*.png"],
       manifest: {
-        name: "Coral Gym",
-        short_name: "Coral Gym",
+        name: "MyGymLog",
+        short_name: "MyGymLog",
         description: "Your training. Your progress. On your device.",
         theme_color: "#E36952",
         background_color: "#ffffff",

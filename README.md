@@ -1,4 +1,4 @@
-# Coral Gym
+# MyGymLog
 
 A personal gym tracker that works offline on your iPhone. Browse 149 exercises, log sets, build plans, track body weight with photos, and keep your favorite YouTube tutorials together.
 

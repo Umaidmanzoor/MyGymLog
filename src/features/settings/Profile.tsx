@@ -18,7 +18,7 @@ const BodyJourney = lazy(() => import("../body/BodyJourney"));
 export default function Profile() {
   const appName = useAppName();
   const storedAppName =
-    useLiveQuery(() => setting("appName", "Coral Gym")) ?? "Coral Gym";
+    useLiveQuery(() => setting("appName", "MyGymLog")) ?? "MyGymLog";
   const unit = useLiveQuery(() => setting("unit", "kg")) ?? "kg";
   const theme = useLiveQuery(() => setting("theme", "light")) ?? "light";
   const rest = useLiveQuery(() => setting("restSeconds", 90)) ?? 90;
@@ -50,7 +50,7 @@ export default function Profile() {
     setBusy(true);
     try {
       const blob = await exportBackup(include);
-      const file = new File([blob], `coral-gym-${dayKey()}.json`, {
+      const file = new File([blob], `mygymlog-${dayKey()}.json`, {
         type: "application/json",
       });
       if (navigator.canShare?.({ files: [file] }))
