@@ -5,16 +5,4 @@ test-results/
 *.tsbuildinfo
 .DS_Store
 
-# Local working documents and personal exports
-.private/
-CODEX_PROMPT.md
-GYM_APP_ARCHITECTURE.md
-reference-*
-AGENTS.md
-.agents/
-.codex/
-coral-gym-*.json
-backups/
-.env
-.env.*
-!.env.example
+
